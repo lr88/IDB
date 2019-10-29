@@ -1,0 +1,19 @@
+<div class="album py-4 ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3" *ngFor="let modulo of listaDeModulos()">
+                <div class="card py-2 mb-3 animated zoomInUp">
+                    <div class="card-body text-black text-center">
+                        <h2 class="mb-2 font-weight-bold">
+                            {{modulo.nombre}}
+                        </h2>
+                        <p class="mb-4">
+                            <strong>{{modulo.descripcion}}</strong>
+                        </p>
+                    </div>
+                    <button (click)="ruterlink(modulo)" class="btn-success">Entrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
