@@ -1,18 +1,22 @@
-<div class="container">
-  <div class="card-deck mb-6 text-center">
-    <div class="card-body mb-6" >
-      <div class="alert alert-success " role="alert">Bienvenido {{nombre}}</div>
-    </div>
-    <div class="card-body mb-6" >
-      <a routerLink="/user/profile"><button type="button" class="btn btn-lg btn-block btn-success">PERFIL</button>
-      </a>
-    </div>
-    <div class="card-body mb-6" >
-      <h3 class="text-success"></h3>
-    </div>
-    <div class="card-body mb-6" >
-      <a (click)="onLogout()"><button type="button" class="btn btn-lg btn-block btn-success">LOGOUT</button>
-      </a>
-    </div>
+
+  <div class= "fondo">
+    <ul class="nav nav-pills nav-fill">
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="alert alert-success ">Bienvenido : {{nombreCompleto}}</div>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <a routerLink="../home/Perfil"><button type="button" class="btn btn-lg btn-block btn-success">Mi
+            Perfil</button>
+          </a>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          <button type="button" (click)="onLogout()" class="btn btn-lg btn-block btn-success">LOGOUT</button>
+        </a>
+      </li>
+    </ul>
   </div>
-</div>

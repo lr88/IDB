@@ -1,22 +1,18 @@
 import { Injectable } from '@angular/core';
-import { usuarioLogueado } from './dominio/Usuarios';
-
-//  modificado
+import {Usuario, setUsuarioLogueado, getUsuarioLogueado }  from './dominio/Usuarios';
 
 @Injectable()
 export class UsuariosServiceService {
-  
+
   constructor() {
   }
 
-  login(unNombreDeUsuario : string, unaContrasena:string) {
-    usuarioLogueado.nombreDeUsuario = unNombreDeUsuario
-    usuarioLogueado.contrasena = unaContrasena
-    return  usuarioLogueado
+  login(unUsuario : Usuario) {
+    setUsuarioLogueado(unUsuario)
   }
 
   isLogged() {
-    if (usuarioLogueado.nombreDeUsuario == undefined) {
+    if (getUsuarioLogueado().nombreDeUsuario == undefined) {
       return false;
     } else {
       return true;
@@ -24,8 +20,11 @@ export class UsuariosServiceService {
   }
 
   deslogear(){
-    usuarioLogueado.nombreDeUsuario = ""
-    usuarioLogueado.contrasena = ""
+    var aux : Usuario = new Usuario()
+    aux.nombreDeUsuario = ""
+    aux.contrasena=""
+    setUsuarioLogueado(aux)
+    
   }
 
 }

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsuariosServiceService } from '../usuarios-service.service';
-import { Usuario, USERS, usuarioLogueado } from '../dominio/Usuarios';
+import { Usuario, USERS} from '../dominio/Usuarios';
 import { NgForm } from '@angular/forms';
-
-// modificado
 
 @Component({
   selector: 'app-logueo',
@@ -34,20 +32,24 @@ export class LogueoComponent implements OnInit {
 
   login(form: NgForm) {
     if (form.valid && this.datosDelUsuario()) {
-      this.usuariosServiceService.login(this.unUsuario.nombreDeUsuario, this.unUsuario.contrasena)
+      this.usuariosServiceService.login(this.encontrarUsuario())
       this.router.navigate(['home'])
       this.isError = false
   }}
 
   datosDelUsuario(){
-     let aux = USERS.find(usuario => 
+      if(this.encontrarUsuario() == undefined){
+        this.onIsError("Usuario o Contraseña Invalida")
+      }
+      return this.encontrarUsuario() !== undefined
+  }
+
+  encontrarUsuario(){
+    let aux = USERS.find(usuario => 
       usuario.nombreDeUsuario == this.unUsuario.nombreDeUsuario &&
       usuario.contrasena == this.unUsuario.contrasena 
       )
-      if(aux == undefined){
-        this.onIsError("Usuario o Contraseña Invalida")
-      }
-      return aux !== undefined
+      return aux
   }
 
   onIsError(_mensaje: String): void {

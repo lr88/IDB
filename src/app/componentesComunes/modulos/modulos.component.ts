@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { usuarioLogueado } from 'src/app/dominio/Usuarios';
 import { Router } from '@angular/router';
 import { Modulo } from 'src/app/dominio/modulos';
+import { getUsuarioLogueado } from 'src/app/dominio/Usuarios';
 
 @Component({
   selector: 'app-modulos',
@@ -16,10 +16,10 @@ export class ModulosComponent implements OnInit {
   }
 
   listaDeModulos(){
-    return usuarioLogueado.modulosPermitidos
+     return getUsuarioLogueado().getModulosPermitidos()
   }
 
-  routerLink(unModulo: Modulo) {
+  redirigir(unModulo: Modulo) {
     return this.router.navigate([unModulo.ruta])
 }
 }

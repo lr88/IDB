@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContaduriaComponent implements OnInit {
 
+  NombreDelModulo = "ContaduriaComponent"
+
   constructor() { }
 
   ngOnInit() {

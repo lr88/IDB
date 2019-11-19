@@ -1,17 +1,13 @@
-<div class="album py-4 ">
+<div class="album ">
     <div class="container">
         <div class="row">
-            <div class="col-md-3" *ngFor="let modulo of listaDeModulos()">
-                <div class="card py-2 mb-3 animated zoomInUp">
-                    <div class="card-body text-black text-center">
-                        <h2 class="mb-2 font-weight-bold">
-                            {{modulo.nombre}}
-                        </h2>
-                        <p class="mb-4">
-                            <strong>{{modulo.descripcion}}</strong>
-                        </p>
+            <div class="col-md-3" style="height: 200px;" *ngFor="let modulo of listaDeModulos()">
+                    <div class="card bg-light mb-3" style="max-width: 100%;">
+                    <div class="card-header text-center">{{modulo.nombre}}</div>
+                    <div class="card-body">
+                        <p class="card-text text-center">{{modulo.descripcion}}</p>
                     </div>
-                    <button (click)="ruterlink(modulo)" class="btn-success">Entrar</button>
+                    <button (click)="redirigir(modulo)" class="btn btn-info">Entrar</button>
                 </div>
             </div>
         </div>

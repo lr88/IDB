@@ -8,17 +8,5 @@ import { Usuario } from './dominio/Usuarios';
 })
 export class AppComponent {
   title = 'IDB';
-  usuarioLogueado : Usuario = null
-  
-  login(unNombreDeUsuario : string, unaContrasena:string) {
-    this.usuarioLogueado = new Usuario()
-    this.usuarioLogueado.nombreDeUsuario = unNombreDeUsuario
-    this.usuarioLogueado.contrasena = unaContrasena
-    return  this.usuarioLogueado
-  }
-
-  deslogear(){
-    this.usuarioLogueado = null
-  }
 
 }

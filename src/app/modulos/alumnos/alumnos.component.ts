@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlumnosComponent implements OnInit {
 
+  NombreDelModulo = "AlumnosComponent"
   constructor() { }
 
   ngOnInit() {

@@ -15,6 +15,9 @@ import { PatrimonioComponent } from './modulos/patrimonio/patrimonio.component';
 import { ComprasComponent } from './modulos/compras/compras.component';
 import { CalendarioComponent } from './modulos/calendario/calendario.component';
 import { BibliotecaComponent } from './modulos/biblioteca/biblioteca.component';
+import { PerfilComponent } from './modulos/perfil/perfil.component';
+import { BarraUnsamComponent } from './barra-unsam/barra-unsam.component';
+import { AdminComponent } from './modulos/admin/admin.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { BibliotecaComponent } from './modulos/biblioteca/biblioteca.component';
     PatrimonioComponent,
     ComprasComponent,
     CalendarioComponent,
-    BibliotecaComponent
+    BibliotecaComponent,
+    PerfilComponent,
+    BarraUnsamComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

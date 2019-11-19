@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BibliotecaComponent implements OnInit {
 
+  NombreDelModulo = "BibliotecaComponent"
   constructor() { }
 
   ngOnInit() {

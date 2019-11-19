@@ -8,6 +8,8 @@ import { CalendarioComponent } from '../modulos/calendario/calendario.component'
 import { ComprasComponent } from '../modulos/compras/compras.component';
 import { ContaduriaComponent } from '../modulos/contaduria/contaduria.component';
 import { PatrimonioComponent } from '../modulos/patrimonio/patrimonio.component';
+import { PerfilComponent } from '../modulos/perfil/perfil.component';
+import { AdminComponent } from '../modulos/admin/admin.component';
 
 const routes: Routes = [{ path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LogueoComponent },
@@ -18,6 +20,8 @@ const routes: Routes = [{ path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home/Compras', component:  ComprasComponent},
   { path: 'home/Contaduria', component:  ContaduriaComponent},
   { path: 'home/Patrimonio', component:  PatrimonioComponent},
+  { path: 'home/Perfil', component:  PerfilComponent},
+  { path: 'home/Admin', component:  AdminComponent},
   { path: '**', component: LogueoComponent },
 ];
    

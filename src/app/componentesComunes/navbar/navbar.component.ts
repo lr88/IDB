@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Usuario, usuarioLogueado } from 'src/app/dominio/Usuarios';
+import { Usuario, getUsuarioLogueado,  } from 'src/app/dominio/Usuarios';
 import { Router } from '@angular/router';
 import { UsuariosServiceService } from 'src/app/usuarios-service.service';
 
@@ -10,12 +10,12 @@ import { UsuariosServiceService } from 'src/app/usuarios-service.service';
 })
 export class NavbarComponent implements OnInit {
 
-  nombre:string = ""
+  nombreCompleto:string = ""
 
   constructor(private router: Router, private usuariosServiceService: UsuariosServiceService) { }
 
   ngOnInit() {
-    this.nombre = usuarioLogueado.nombreDeUsuario
+    this.nombreCompleto = getUsuarioLogueado().nombreCompleto
   }
 
   onLogout(){

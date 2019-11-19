@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatrimonioComponent implements OnInit {
 
+  NombreDelModulo = "PatrimonioComponent"
+
   constructor() { }
 
   ngOnInit() {
