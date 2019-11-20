@@ -1,4 +1,41 @@
 <a class="nav-link">
     <div class="alert text-center alert-success ">{{NombreDelModulo}}</div>
 </a>
+<section class="background transbox mb-5 mt-5 animated zoomIn">
+    <section class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="card card_login card-body text-center">
+                    <form>
+                        <div class="form-group">
+                            <div class="alert text-center alert-success ">Alta de Usuario</div>
+                            <input type="text" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nombre de Usuario">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" aria-describedby="emailHelp"
+                                placeholder="Nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Password">
+                        </div>
+                        <div *ngFor="let modulo of listaDeModulos()">
+                            <div class="form-group row">
+                                <div class="col-sm-4">{{modulo.nombre}}</div>
+                                <div class="col-sm-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                    </div>
+                                </div>
+                                <div class="col-sm-4"></div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">Crear usuario nuevo</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
 <app-boton></app-boton>

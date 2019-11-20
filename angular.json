@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "IDB2"
+    }
+  },
+  "defaultProject": "IDB2",
+  "cli": {
+    "analytics": "7162ed61-0d84-4f67-9169-f03979465a94"
+  }
 }

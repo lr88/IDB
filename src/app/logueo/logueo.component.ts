@@ -10,52 +10,51 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./logueo.component.css']
 })
 export class LogueoComponent implements OnInit {
-  mensaje = null
-  public isError = false
-  unUsuario: Usuario = new Usuario()
+  mensaje = null;
+  public isError = false;
+  unUsuario: Usuario = new Usuario();
 
   constructor(private router: Router, private usuariosServiceService: UsuariosServiceService) { }
 
   ngOnInit() {
-    this.usuariosServiceService.deslogear()
+    this.usuariosServiceService.deslogear();
   }
 
   onLogin(form: NgForm) {
     try {
-      this.mensaje = ""
-      this.login(form)
-    }
-    catch (errorValidation) {
-      this.onIsError(errorValidation)
+      this.mensaje = '';
+      this.login(form);
+    } catch (errorValidation) {
+      this.onIsError(errorValidation);
     }
   }
 
   login(form: NgForm) {
     if (form.valid && this.datosDelUsuario()) {
-      this.usuariosServiceService.login(this.encontrarUsuario())
-      this.router.navigate(['home'])
-      this.isError = false
+      this.usuariosServiceService.login(this.encontrarUsuario());
+      this.router.navigate(['home']);
+      this.isError = false;
   }}
 
-  datosDelUsuario(){
-      if(this.encontrarUsuario() == undefined){
-        this.onIsError("Usuario o Contraseña Invalida")
+  datosDelUsuario() {
+      if (this.encontrarUsuario() === undefined) {
+        this.onIsError('Usuario o Contraseña Invalida');
       }
-      return this.encontrarUsuario() !== undefined
+      return this.encontrarUsuario() !== undefined;
   }
 
-  encontrarUsuario(){
-    let aux = USERS.find(usuario => 
-      usuario.nombreDeUsuario == this.unUsuario.nombreDeUsuario &&
-      usuario.contrasena == this.unUsuario.contrasena 
-      )
-      return aux
+  encontrarUsuario() {
+    const aux = USERS.find(usuario =>
+      usuario.nombreDeUsuario === this.unUsuario.nombreDeUsuario &&
+      usuario.contrasena === this.unUsuario.contrasena
+      );
+    return aux;
   }
 
-  onIsError(_mensaje: String): void {
-    this.mensaje = _mensaje
+  onIsError(unMensaje: string): void {
+    this.mensaje = unMensaje;
     setTimeout(() => {
-      this.mensaje = "";
-    }, 4000)
+      this.mensaje = '';
+    }, 4000);
   }
-} 
+}

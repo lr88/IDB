@@ -10,16 +10,16 @@ import { getUsuarioLogueado } from 'src/app/dominio/Usuarios';
 })
 export class ModulosComponent implements OnInit {
 
-  constructor(private router: Router,) { }
+  constructor(private router: Router, ) { }
 
   ngOnInit() {
   }
 
-  listaDeModulos(){
-     return getUsuarioLogueado().getModulosPermitidos()
+  listaDeModulos() {
+     return getUsuarioLogueado().getModulosPermitidos();
   }
 
   redirigir(unModulo: Modulo) {
-    return this.router.navigate([unModulo.ruta])
+    return this.router.navigate([unModulo.ruta]);
 }
 }
