@@ -10,12 +10,13 @@ import { UsuariosServiceService } from 'src/app/usuarios-service.service';
 })
 export class NavbarComponent implements OnInit {
 
-  nombreCompleto:string = ""
+  usuario : Usuario
 
-  constructor(private router: Router, private usuariosServiceService: UsuariosServiceService) { }
+  constructor(private router: Router, private usuariosServiceService: UsuariosServiceService) {
+    this.usuario = getUsuarioLogueado()
+   }
 
   ngOnInit() {
-    this.nombreCompleto = getUsuarioLogueado().nombreCompleto
   }
 
   onLogout(){

@@ -11,6 +11,13 @@ export class UsuariosServiceService {
     setUsuarioLogueado(unUsuario)
   }
 
+  update(usuarioViejo : Usuario, usuarioNuevo : Usuario) {
+    usuarioViejo.nombreDeUsuario = usuarioNuevo.nombreDeUsuario 
+    usuarioViejo.contrasena = usuarioNuevo.contrasena 
+  
+  }
+
+
   isLogged() {
     if (getUsuarioLogueado().nombreDeUsuario == undefined) {
       return false;

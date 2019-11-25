@@ -7,12 +7,15 @@ export class Usuario {
   nombreCompleto?: string;
   contrasena?: string;
   modulosPermitidos: Modulo[] = [];
+  linkFoto?: string; 
 
-  constructor(unNombreDeUsuario?: string, unNombreCompleto?: string, unaContrasena?: string, losMODULOS?: Modulo[]) {
+  constructor(unNombreDeUsuario?: string, unNombreCompleto?: string, 
+    unaContrasena?: string, losMODULOS?: Modulo[],unaFoto?: string) {
     this.nombreCompleto = unNombreCompleto;
     this.nombreDeUsuario = unNombreDeUsuario;
     this.contrasena = unaContrasena;
     this.modulosPermitidos = losMODULOS;
+    this.linkFoto = unaFoto;
   }
 
   getModulosPermitidos() {
@@ -57,7 +60,7 @@ export let USERS: Usuario[] = [
     ModuloCompras,
     ModuloCalendario,
     ModuloBiblioteca
-  ]),
+  ],"https://ibeninson.cnea.edu.ar/uploads/2018/06/adrian-daoud.jpg"),
   new Usuario('Adriel', 'Adriel LONGARELA ', 'asdasdasd', [
     ModuloAlumnos,
     ModuloCalendario,
@@ -67,7 +70,7 @@ export let USERS: Usuario[] = [
   new Usuario('Javier', 'Javier BARRETO ', 'asdasdasd', [
     ModuloCalendario,
     ModuloBiblioteca,
-  ]),
+  ],"https://ibeninson.cnea.edu.ar/uploads/2018/08/JAVIER-BARRETO2.jpg"),
 ];
 
 

@@ -1,9 +1,53 @@
-<a class="nav-link">
-    <div class="alert text-center alert-success ">{{NombreDelModulo}}</div>
-</a>
+<div class="alert text-center alert-success ">Datos del usuario</div>
+<div>
+  <div class="background">
+    <div class="transbox">
+      <section id="login" class="mb-5 mt-5 animated zoomIn">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 mx-auto">
+              <div class="card_login">
+                <div class="card">
+                  <div class="card-body text-center">
+                    <form #formLogin="ngForm" (ngSubmit)="onLogin(formLogin)">
+                      <h1 class="h3 mb-3 font-weight-normal" *ngIf="!mensaje">Modificacion de datos</h1>
+                      <div class="alert alert-danger" role="alert" *ngIf="mensaje">
+                        {{mensaje}}
+                      </div>
+                        <div class="alert alert-success ">{{usuario.nombreCompleto}}</div>
+                      <div>
+                        <img src='{{usuario.linkFoto}}' class="card-img" style="max-height: 150px; max-width: 130px;">
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <input type="text" inputmode="numeric" pattern="[0-9a-zA-Z]*" digitOnly id="nombre"
+                          name="nombre" class="form-control" placeholder="Nuevo nombre de Usuario"
+                          [(ngModel)]="usuario2.nombreDeUsuario" minlength="1" maxlength="25" appForbiddenName="bob"
+                          required>
+                      </div>
 
-<div class="logo_container">
-    <img src="https://ibeninson.cnea.edu.ar/uploads/2018/08/JAVIER-BARRETO2.jpg" style="height: 500px;">
+                      <div class="form-group">
+                        <input type="password" name="contrasenia" class="form-control" placeholder="Nueva contraseña"
+                          [(ngModel)]="contrasenaAux" pattern="[0-9a-zA-Z]*" minlength="6" maxlength="10" required>
+                      </div>
+
+                      <div class="form-group">
+                        <input type="password" id="contrasenia" name="contrasenia2" class="form-control"
+                          placeholder="Reingrese nueva contrasena" [(ngModel)]="usuario2.contrasena"
+                          pattern="[0-9a-zA-Z]*" minlength="6" maxlength="10" required>
+                      </div>
+
+                      <button type="submit" class="btn btn-success">Modificar cuenta</button>
+                    </form>
+                    <SMALL class="text-center ">Solo caracteres numericos y alfabeticos</SMALL>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
-
+</div>
 <app-boton></app-boton>
